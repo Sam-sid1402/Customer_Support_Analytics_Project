@@ -1,73 +1,128 @@
 # Customer Support Analytics Project
+
 ## Overview
 
-This project analyzes customer support operations using multiple datasets (tickets, agents, reviews) to identify inefficiencies, improve response time, and better understand customer satisfaction drivers.
+This project analyzes customer support operations using simulated support datasets containing:
+- support tickets
+- customer reviews
+- agent information
 
-## Business Problem
+The goal of the analysis was to identify operational inefficiencies, workload distribution patterns, response time issues, and customer satisfaction trends.
 
-Customer support teams often struggle with:
+The project includes:
+- data cleaning
+- feature engineering
+- exploratory data analysis (EDA)
+- SQL export
+- KPI analysis
+- dashboard-style visualizations
 
-- Long response times
-- Uneven workload distribution between agents
-- Lack of visibility into performance metrics
+---
 
-The goal of this project is to analyze support data and provide actionable insights to improve efficiency and customer experience.
+# Tools & Technologies
 
-## Dataset
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SQLite
 
-The project uses 3 datasets:
+---
 
-Tickets — customer requests, timestamps, status
-Agents — agent information and assignments
-Reviews — customer feedback and ratings
+# Project Workflow
 
-The data includes inconsistencies (missing values, formatting issues), simulating a real-world scenario.
+## 1. Data Cleaning
 
-## Process
+Several preprocessing steps were performed before analysis:
 
-1. Data Cleaning
+- handling missing values
+- removing duplicates
+- fixing inconsistent values
+- correcting invalid timestamps
+- standardizing text fields
 
-- Handled missing values
-- Standardized formats (dates, categories)
-- Removed duplicates
+## 2. Feature Engineering
 
-2. Data Transformation
+| Feature | Description |
+|---|---|
+| `response_time_hours` | Calculated response time between ticket creation and resolution |
+| `resolution_time_hours` | Total ticket resolution duration |
+| `is_overloaded` | Indicates overloaded agents based on workload |
+| `ticket_priority_group` | Grouped ticket priority categories |
+| `rating_numeric` | Numerical customer review rating |
 
-- Merged datasets using keys
-- Created new features (e.g., response time, resolution time)
+## 3. Exploratory Data Analysis
 
-3. Analysis (EDA)
+The analysis explored:
+- response time trends
+- ticket volume
+- agent workload
+- customer satisfaction
+- review patterns
+- support efficiency KPIs
 
-- Response time distribution
-- Agent workload analysis
-- Rating vs response time relationship
+### Key Insights
 
-4. KPIs
+- Some agents handled significantly higher ticket volumes than others.
+- Longer response times were associated with lower customer ratings.
+- Certain ticket categories showed consistently slower resolution times.
+- Customer satisfaction scores varied depending on workload and response speed.
+- Ticket distribution was uneven across agents and support categories.
 
-- Average response time
-- Resolution time
-- Customer satisfaction (rating)
-- Agent performance
+---
 
-## Key Insights
+# Dashboard & Visualization Preview
 
-- Higher response times are associated with lower customer ratings
-- Some agents are significantly overloaded compared to others
-- Negative reviews are more frequent when response time exceeds a certain threshold
+## Support KPI & Agent Performance Analysis
 
-## Business Recommendations
+![Support KPI & Agent Performance Analysis](images/dash.png)
 
-- Redistribute tickets more evenly between agents
-- Set internal SLA targets for response time
-- Prioritize tickets based on urgency and sentiment
+The visual analysis focused on:
+- response times
+- workload distribution
+- customer ratings
+- ticket categories
+- support performance KPIs
 
-## Tools Used
+---
 
-- Python (pandas, numpy, matplotlib)
-- SQL
-- Jupyter Notebook
+# Limitations
 
-## Future Improvements
+- The datasets were simulated for portfolio purposes.
+- Some operational patterns may not fully represent real-world support environments.
+- Customer satisfaction can be influenced by factors not included in the dataset.
 
-- Build a machine learning model to predict customer dissatisfaction
-- Implement automated ticket prioritization
+
+# Author
+
+Semyon Sidorov
+
+---
+
+# SQL Analysis
+
+SQLite was used to perform:
+- aggregations
+- joins
+- KPI calculations
+- ticket and agent analysis queries
+
+---
+
+# Project Structure
+
+```text
+Customer_Support_Analytics_Project/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│
+├── images/
+│
+├── README.md
+│
+└── requirements.txt
