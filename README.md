@@ -13,7 +13,6 @@ The project includes:
 - data cleaning
 - feature engineering
 - exploratory data analysis (EDA)
-- SQL export
 - KPI analysis
 - dashboard-style visualizations
 
@@ -26,7 +25,6 @@ The project includes:
 - NumPy
 - Matplotlib
 - Seaborn
-- SQLite
 
 ---
 
@@ -98,15 +96,6 @@ The visual analysis focused on:
 
 Semyon Sidorov
 
----
-
-# SQL Analysis
-
-SQLite was used to perform:
-- aggregations
-- joins
-- KPI calculations
-- ticket and agent analysis queries
 
 ---
 
